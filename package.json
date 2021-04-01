@@ -1,0 +1,19 @@
+{
+  "name": "@blastz/node-wechat",
+  "version": "0.1.0",
+  "description": "node wechat sdk",
+  "main": "dist/index.js",
+  "scripts": {
+    "tsc": "tsc",
+    "push": "npm run tsc && npm publish --access public --registry=https://registry.npmjs.org"
+  },
+  "author": "blastz",
+  "license": "MIT",
+  "dependencies": {
+    "@types/node-fetch": "^2.5.8",
+    "node-fetch": "^2.6.1"
+  },
+  "devDependencies": {
+    "typescript": "^4.2.3"
+  }
+}
