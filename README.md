@@ -1,8 +1,29 @@
 # Node-WeChat
 
-Node wechat sdk.
+Node wechat sdk, including these modules:
 
-## Official WeChat API
+- OfficialWeChat
+
+## Install
+
+```bash
+npm install @blastz/node-wechat
+```
+
+## OfficialWeChat API
+
+Module `OfficialWeChat` is created for [official account](https://developers.weixin.qq.com/doc/offiaccount/Getting_Started/Overview.html).
+
+```ts
+import { OfficialWeChat } from '@blastz/node-wechat';
+
+const officialWeChat = new OfficialWeChat({
+  appId,
+  appSecret,
+  logger,
+  cacheAdapter,
+});
+```
 
 ### .getTempQRCode(sceneStr)
 
