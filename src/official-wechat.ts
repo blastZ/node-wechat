@@ -1,15 +1,15 @@
 import fetch from 'node-fetch';
 
 export class OfficialWeChat {
-  appId: string;
-  appSecret: string;
-  url = 'https://api.weixin.qq.com/cgi-bin';
+  private appId: string;
+  private appSecret: string;
+  private url = 'https://api.weixin.qq.com/cgi-bin';
 
-  logger: any = {
+  private logger: any = {
     debug: console.log,
     error: console.error,
   };
-  cacheAdapter: any;
+  private cacheAdapter: any;
 
   constructor(config: { appId: string; appSecret: string; logger?: any; cacheAdapter?: any }) {
     this.appId = config.appId;
@@ -20,7 +20,7 @@ export class OfficialWeChat {
   }
 
   // https://developers.weixin.qq.com/doc/offiaccount/Basic_Information/Get_access_token.html
-  async getAccessToken() {
+  private async getAccessToken() {
     if (this?.cacheAdapter?.getAccessToken) {
       const token = await this.cacheAdapter.getAccessToken();
 
