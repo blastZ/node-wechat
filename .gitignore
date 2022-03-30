@@ -1,4 +1,5 @@
 # Local Configuration
+.env
 
 # Dependencies
 node_modules
