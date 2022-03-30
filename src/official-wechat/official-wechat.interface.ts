@@ -8,7 +8,7 @@ export type AccessTokenResponse = {
   expires_in: number; // 单位秒
 };
 
-export type TempQRCodeResponse = {
+export type QRCodeTicketResponse = {
   ticket: string;
   expire_seconds: number;
   url: string;

@@ -7,7 +7,7 @@ import {
   ErrorResponse,
   GetUserInfoResult,
   Logger,
-  TempQRCodeResponse,
+  QRCodeTicketResponse,
   UserInfoResponse,
 } from './official-wechat.interface';
 
@@ -105,7 +105,7 @@ export class OfficialWechat {
         action_name: 'QR_STR_SCENE',
         action_info: { scene: { scene_str: sceneStr } },
       }),
-    }).then((o) => o.json())) as ErrorResponse | TempQRCodeResponse;
+    }).then((o) => o.json())) as ErrorResponse | QRCodeTicketResponse;
 
     if ((<ErrorResponse>result).errcode) {
       this.logger?.error({
@@ -126,7 +126,7 @@ export class OfficialWechat {
       }
     }
 
-    const ticket = (result as TempQRCodeResponse).ticket;
+    const ticket = (result as QRCodeTicketResponse).ticket;
 
     this.logger?.debug({ ticket });
 
